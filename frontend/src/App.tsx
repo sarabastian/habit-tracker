@@ -21,7 +21,7 @@ function App() {
 
   return (
     <div className="App">
-   <Main props={habits}/>
+   <Main habits={habits}/>
     </div>
   );
 }

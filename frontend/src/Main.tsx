@@ -3,11 +3,14 @@ import React from 'react'
 type AppProps = {
     habits: string[]
 }
-const Main = (props: AppProps) => {
+
+
+const Main: React.FC<AppProps> = ({habits}) => {
+    console.log(habits)
     return(
         <>
-        {props}
-        <>
+       <h1>Habits</h1>
+        </>
     )
 }
 
