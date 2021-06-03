@@ -1,4 +1,5 @@
 class Habit < ApplicationRecord
     belongs_to :category
-    belongs_to :day
+    has_many :daily_habits
+    has_many :days, through: :daily_habits
 end

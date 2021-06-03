@@ -3,7 +3,7 @@ class CreateHabits < ActiveRecord::Migration[6.1]
     create_table :habits do |t|
       t.string :name
       t.integer :category_id
-      t.integer :day_id
+    
 
       t.timestamps
     end

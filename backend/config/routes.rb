@@ -4,6 +4,7 @@ Rails.application.routes.draw do
       resources :habits
       resources :categories
       resources :days
+      resources :daily_habits
     end
   end
 end
