@@ -23,7 +23,7 @@ const Habit: React.FC<HabitInterface> = (props) => {
         <Table>
           <TableBody>
             <TableRow>
-              <TableCell>{props.name}</TableCell>
+              <TableCell>{props.habit.name}</TableCell>
               <TableCell></TableCell>
             </TableRow>
           </TableBody>

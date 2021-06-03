@@ -4,7 +4,7 @@ import Main from "./Main";
 
 function App() {
   useEffect(() => {
-    fetch("http://localhost:3000/api/v1/habits")
+    fetch("http://localhost:3000/api/v1/daily_habits")
       .then((r) => r.json())
       .then((habits) => setHabits(habits));
   }, []);
@@ -13,7 +13,7 @@ function App() {
   console.log(habits);
   return (
     <div className="App">
-      <Main habits={habits} />
+      <Main daily_habits={habits} />
     </div>
   );
 }

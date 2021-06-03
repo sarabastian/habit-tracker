@@ -9,28 +9,50 @@ import {
 } from "@windmill/react-ui";
 
 interface HabitProps {
-  habits: {
+  daily_habits: {
     id: number;
-    name: string;
-    category_id: number;
-    day_id: number;
+    day: {
+      created_at?: string;
+      date: string;
+      id: number;
+      updated_at?: string;
+    };
+    habit: {
+      created_at?: string;
+      id: number;
+      name: string;
+      updated_at?: string;
+    };
+    completed: boolean;
   }[];
 }
 
 interface HabitInterface {
   id: number;
-  name: string;
-  category_id: number;
-  day_id: number;
+  day: {
+    created_at?: string;
+    date: string;
+    id: number;
+    updated_at?: string;
+  };
+  habit: {
+    created_at?: string;
+    id: number;
+    name: string;
+    updated_at?: string;
+  };
+  completed: boolean;
 }
 
-const Main: React.FC<HabitProps> = ({ habits }) => {
+const Main: React.FC<HabitProps> = ({ daily_habits }) => {
   const [days, setDays] = React.useState([]);
 
   //   useEffect(() => {
   //       fetch('')
   //   }
   //   )
+
+  console.log(daily_habits);
   return (
     <>
       <h1>My Habits</h1>
@@ -45,7 +67,7 @@ const Main: React.FC<HabitProps> = ({ habits }) => {
         </Table>
       </TableContainer>
 
-      {habits.map((h: HabitInterface) => (
+      {daily_habits.map((h: HabitInterface) => (
         <Habit {...h} />
       ))}
     </>
