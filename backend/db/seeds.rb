@@ -16,5 +16,5 @@ c3 = Category.create(title: 'Reading')
 
 
 d1 = Day.create(date: '2021-05-26', habit_achieved: false)
-h1 = Habit.create(name: 'Exercise', category_id: c1.id, day_id: d1.id)
-h2 = Habit.create(name: 'Meditation', category_id: c1.id, day_id: d1.id)
+h1 = Habit.create(name: 'Exercise', category_id: c1.id, day_id: d1.id, completed: false)
+h2 = Habit.create(name: 'Meditation', category_id: c1.id, day_id: d1.id, completed: false)

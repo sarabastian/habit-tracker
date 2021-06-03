@@ -3,7 +3,6 @@ import HabitInterface from "./Habit.Interface";
 import {
   TableContainer,
   Table,
-  TableHeader,
   TableBody,
   TableRow,
   TableCell,
@@ -20,15 +19,14 @@ const Habit: React.FC<HabitInterface> = (props) => {
   console.log(props);
   return (
     <h1>
-      {props.name}
       <TableContainer>
         <Table>
-          <TableHeader>
+          <TableBody>
             <TableRow>
-              <TableCell>Name</TableCell>
-              <TableCell>Address</TableCell>
+              <TableCell>{props.name}</TableCell>
+              <TableCell></TableCell>
             </TableRow>
-          </TableHeader>
+          </TableBody>
         </Table>
       </TableContainer>
     </h1>

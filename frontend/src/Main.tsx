@@ -1,5 +1,12 @@
 import React from "react";
 import Habit from "./Habit";
+import {
+  TableContainer,
+  Table,
+  TableHeader,
+  TableRow,
+  TableCell,
+} from "@windmill/react-ui";
 
 interface HabitProps {
   habits: {
@@ -18,10 +25,25 @@ interface HabitInterface {
 }
 
 const Main: React.FC<HabitProps> = ({ habits }) => {
-  console.log(habits);
+  const [days, setDays] = React.useState([]);
+
+  //   useEffect(() => {
+  //       fetch('')
+  //   }
+  //   )
   return (
     <>
       <h1>My Habits</h1>
+      <TableContainer>
+        <Table>
+          <TableHeader>
+            <TableRow>
+              <TableCell>Habit</TableCell>
+              <TableCell>Monday</TableCell>
+            </TableRow>
+          </TableHeader>
+        </Table>
+      </TableContainer>
 
       {habits.map((h: HabitInterface) => (
         <Habit {...h} />
