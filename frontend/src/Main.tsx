@@ -8,8 +8,8 @@ import {
   TableCell,
 } from "@windmill/react-ui";
 
-interface HabitProps {
-  daily_habits: {
+type HabitProps = {
+  dailyHabits: {
     id: number;
     day: {
       created_at?: string;
@@ -25,9 +25,9 @@ interface HabitProps {
     };
     completed: boolean;
   }[];
-}
+};
 
-interface HabitInterface {
+type HabitChild = {
   id: number;
   day: {
     created_at?: string;
@@ -42,17 +42,9 @@ interface HabitInterface {
     updated_at?: string;
   };
   completed: boolean;
-}
+};
 
-const Main: React.FC<HabitProps> = ({ daily_habits }) => {
-  const [days, setDays] = React.useState([]);
-
-  //   useEffect(() => {
-  //       fetch('')
-  //   }
-  //   )
-
-  console.log(daily_habits);
+const Main = ({ dailyHabits }: HabitProps) => {
   return (
     <>
       <h1>My Habits</h1>
@@ -61,13 +53,13 @@ const Main: React.FC<HabitProps> = ({ daily_habits }) => {
           <TableHeader>
             <TableRow>
               <TableCell>Habit</TableCell>
-              <TableCell>Monday</TableCell>
+              <TableCell>Completed?</TableCell>
             </TableRow>
           </TableHeader>
         </Table>
       </TableContainer>
 
-      {daily_habits.map((h: HabitInterface) => (
+      {dailyHabits.map((h: HabitChild) => (
         <Habit {...h} />
       ))}
     </>

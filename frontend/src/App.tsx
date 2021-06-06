@@ -10,10 +10,10 @@ function App() {
   }, []);
 
   const [habits, setHabits] = React.useState([]);
-  console.log(habits);
+
   return (
     <div className="App">
-      <Main daily_habits={habits} />
+      <Main dailyHabits={habits} />
     </div>
   );
 }
